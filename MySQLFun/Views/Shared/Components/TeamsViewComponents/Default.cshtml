@@ -1,0 +1,17 @@
+﻿@{
+}
+
+@model IEnumerable<string>
+
+<div class="d-grid gap-2">
+    <a asp-controller="Home" asp-action="Index" asp-route-teamName=""
+       class="btn btn-outline-secondary @(ViewBag.SelectedTeam == "" ? "btn-primary" :  "btn-outline-secondary")">Home</a>
+    <br />
+
+    @foreach (string s in Model)
+    {
+        <a asp-controller="Home" asp-action="Index" asp-route-teamName="@s"
+           class="btn @(ViewBag.SelectedTeam == s ? "btn-primary" :  "btn-outline-secondary")">@s</a>
+        <br />
+    }
+</div>
